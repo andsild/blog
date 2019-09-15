@@ -1,0 +1,17 @@
+I have to confess I never quite understood exactly what logarithms were. There's always been some simple formulas handy that show log_b(x) = y is the same as b^y = x, from which I've survived the majority of school. In the latest years of studying, logarithms pretty much just became a tool we used to make our graphs show the first, smaller ranges of numbers at a higher resolution.
+
+I've recently picked up some math and decided to really learn logarithms. First: demystifying them.
+Logarithms were inventet by a scotsman named Napier. He combined the greek words logos, meaning ratio, and arithmos, meaning numbers. Logarithms is, simply put, related to finding ratios of exponential growth in numbers. Supposedly, this is actually something humans are pretty good at. Experiments on people living outside of educated societies shows we don't differente between smaller numbers, such as the difference between 7 and 8 or 99 and 112. We can, and will, however, always recognize the bigger differences such as the difference between 2 and 4, or 4 and 16 or 16 and 32.. you get the drill.
+
+Programming has taught me the principles of duck typing. If i know the properties of a logarithm, then even though I don't understand what it is, I can still treat it like another known object or abstraction. But its not good enough for me. What happens when we ask a computer or humanbeing for, say, the logarithm, base 10, of 2? How do we actually solve 10^x = 2?
+
+Duck typing isn't actually such a bad idea. Turns out, logarithms are defined as $int_{1}{a}{frac1x})dx. How do we know this is true? Because, said formula satisfies every property that we want from a logarithm:
+	* ln 1 = 0
+	* ln (xy) = ln x + ln y
+	* ln x < ln y iff 0 < x < y
+... and a few others I dind't bother to copy from wikipedia. The properties above can be found if you play around with exponents a bit (e.g. e0 = 1).
+
+Is this why I was never taught was logarithms were in school? We didn't do intergrals until my senior year, but we did, as far as I recall, logarithms already in the second year.
+Anyway, people that are like me might wonder how the formula for the logarithm relates to eulers digit. Well, turns out e is the unique number that satisfies ln (e) = 1 \dots
+As can be seen in this graph:
+::GRAPH::
