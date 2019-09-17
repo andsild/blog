@@ -10,7 +10,7 @@ in
 nixpkgs.haskell.lib.buildStackProject {
   name = "default-stack-shell";
   buildInputs = with pkgs; [
-    git zlib haskellPackages.hlint gmp stack
+    haskellPackages.hlint stack
   ];
   LANG = "en_US.UTF-8";
   inherit ghc;
