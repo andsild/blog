@@ -2,5 +2,6 @@
 title: Contact
 ---
 
-I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not
-like to be contacted.
+You can reach me at linkedin (www.linkedin.com/in/anders-sildnes).
+If you want to, have a look at my github https://github.com/andsild/
+

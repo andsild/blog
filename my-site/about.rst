@@ -1,17 +1,9 @@
 ---
 title: About
 ---
-Nullam imperdiet sodales orci vitae molestie. Nunc quam orci, pharetra a
-rhoncus vitae, eleifend id felis. Suspendisse potenti. Etiam vitae urna orci.
-Quisque pellentesque dignissim felis, egestas tempus urna luctus vitae. In hac
-habitasse platea dictumst. Morbi fringilla mattis odio, et mattis tellus
-accumsan vitae.
+Qwde (http://qwde.no) is a project outside of work. 
+The primary goal is to explore technology. Go fast and break things. Code to get joy, not a paycheck. 
 
-1. Amamus Unicode 碁
-2. Interdum nex magna.
+Several posts in the blog are inspired by topics I've heard at IQ2US (https://www.intelligencesquaredus.org/). I recommend to all their podcasts, youtube videos and their endeavour to fight for civil conduct in debates.
 
-Vivamus eget mauris sit amet nulla laoreet lobortis. Nulla in diam elementum
-risus convallis commodo. Cras vehicula varius dui vitae facilisis. Proin
-elementum libero eget leo aliquet quis euismod orci vestibulum. Duis rhoncus
-lorem consequat tellus vestibulum aliquam. Quisque orci orci, malesuada porta
-blandit et, interdum nec magna.
+The source code for the blog is hosted on https://github.com/andsild/blog.
