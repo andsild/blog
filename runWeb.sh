@@ -2,5 +2,5 @@
 
 set -xe
 
-nix-shell --pure --command "cd /home/andsild/blog/my-site && stack exec site watch"
-
+cd /home/dev/blog/my-site 
+stack exec site watch
