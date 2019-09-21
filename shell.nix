@@ -3,7 +3,8 @@
 let
   inherit (nixpkgs) pkgs;
   # at some point in the future I'd like to know how to pass in "enableLibraryProfiling" here
-  # you nee allowBroken = true for hakyll :(
+  # you need allowBroken = true for hakyll :(
+  #ghc = pkgs.haskell.packages.${compiler}.ghcWithHoogle (ps: with ps; [
   ghc = pkgs.haskell.packages.${compiler}.ghcWithHoogle (ps: with ps; [
         ]);
 in
