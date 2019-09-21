@@ -41,3 +41,4 @@ executables/input/amazon
 stack.yaml
 *out.txt
 _cache/
+_site/
