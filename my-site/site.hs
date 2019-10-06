@@ -2,11 +2,15 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import GHC.IO.Encoding
 
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = do
+  setLocaleEncoding utf8
+
+  hakyll $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler

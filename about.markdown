@@ -2,7 +2,7 @@
 title: About
 ---
 Qwde ([http://qwde.no](http://qwde.no)) is a project outside of work. 
-The primary goal is to explore technology. Go fast and break things.  I'm not making perfect posts or code, <a href="https://medium.com/startup-leadership/the-best-way-to-learn-something-make-a-lot-of-pots-7f4aa97e1d3a">I'm just making a lot of pots</a>. 
+The primary goal is to explore technology. Go fast and break things.  I'm not making perfect posts or code, [I'm just making a lot of pots](https://medium.com/startup-leadership/the-best-way-to-learn-something-make-a-lot-of-pots-7f4aa97e1d3a).
 
 Qwde is a name that comes from mashing the keyboard. Maybe it will find its way to become something like "Quantitative Wicket De Minimis"? Or something recursive and GNU-ish as "Qwde Was Deliberately Erratic"?
 
