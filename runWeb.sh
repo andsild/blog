@@ -3,4 +3,4 @@
 set -xe
 
 cd /home/dev/blog/my-site 
-stack exec site watch
+./dist/build/site/site watch
