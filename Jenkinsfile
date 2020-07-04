@@ -1,6 +1,10 @@
 node {
   def customImage = docker.build("blog:latest", "--target build")
 
+   tools {
+    'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
+    }
+
   customImage.inside {
     withGradle {
       sh './gradlew publish --info'
