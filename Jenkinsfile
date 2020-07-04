@@ -1,5 +1,4 @@
-pipeline {
-  checkout scm
+node {
   def customImage = docker.build("blog:latest", "--target build")
 
   customImage.inside {
