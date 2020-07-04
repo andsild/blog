@@ -1,1 +1,1 @@
-rootProject.name = "qwde"
+rootProject.name = "blog"
