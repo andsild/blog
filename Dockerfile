@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN add-apt-repository ppa:hvr/ghcjs
 RUN add-apt-repository ppa:hvr/ghc
-RUN apt-get update && apt-get install -y ghcjs-8.4 ghc-8.4.4 cabal-install-3.2
+RUN apt-get update && apt-get install -y ghcjs-8.4 ghc-8.4.4 cabal-install-3.2 default-jdk
 ENV PATH="/opt/ghc/bin:/opt/ghcjs/bin:${PATH}"
 RUN cabal update && cabal new-install hakyll 
 
