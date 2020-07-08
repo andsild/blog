@@ -8,8 +8,9 @@ pipeline {
   stages {
     stage('Publish') {
       steps {
-          sh '../gradlew publish --info'
+          sh 'cd /blog/ && ./gradlew publish --info'
           sh '''
+            cd /blog/my-site/
             set +x # don't expose password
             token="$(cat /run/var/deploy-password)"
             echo "Doing curl http://qwde.no:9000/hooks/qwde-deploy?token=..."
