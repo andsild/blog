@@ -9,8 +9,9 @@ RUN apt-get update && apt-get install -y ghcjs-8.4 ghc-8.4.4 cabal-install-3.2
 ENV PATH="/opt/ghc/bin:/opt/ghcjs/bin:${PATH}"
 RUN cabal update && cabal new-install hakyll 
 
-COPY my-site /my-site
-WORKDIR /my-site
+COPY my-site /blog/my-site/
+COPY ./*.kts grade* /my-site/
+WORKDIR /blog/my-site
 RUN cabal build
 
 FROM build as runner
