@@ -16,5 +16,5 @@ RUN cabal build
 FROM build as runner
 COPY docker-entrypoint.sh /usr/local/bin
 # Hakyll's default port is 127.0.0.1, but for exposure through docker we need 0.0.0.0
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["cabal", "run", "my-site", "watch", "--", "--host", "0.0.0.0"]
