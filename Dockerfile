@@ -10,7 +10,10 @@ ENV PATH="/opt/ghc/bin:/opt/ghcjs/bin:${PATH}"
 RUN cabal update && cabal new-install hakyll 
 
 COPY my-site /blog/my-site/
-COPY ./*.kts ./gradle* /my-site/
+COPY ./build.gradle.kts ./blog/
+COPY ./settings.gradle.kts ./blog/
+COPY ./gradle/ ./blog/
+COPY ./gradlew ./blog/
 WORKDIR /blog/my-site
 RUN cabal build
 
