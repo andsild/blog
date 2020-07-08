@@ -8,10 +8,7 @@ pipeline {
   stages {
     stage('Publish') {
       steps {
-          withGradle {
-            sh './gradlew publish --info'
-          }
-
+          sh './gradlew publish --info'
           sh '''
             set +x # don't expose password
             token="$(cat /run/var/deploy-password)"
