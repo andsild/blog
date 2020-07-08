@@ -2,7 +2,6 @@ pipeline {
   agent { 
     dockerfile {
       filename 'Dockerfile'
-      label 'jenkinsblog'
       args '-v /data/.gradle/gradle.properties:/root/.gradle/gradle.properties -v /run/secrets/deploy-password:/var/deploy-password'
     }
   }
