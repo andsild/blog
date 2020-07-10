@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''
           id=$(docker create qwdeblog:latest)
-          docker cp $id:/blog/my-sitetarget/site.bin ./target/
+          docker cp $id:/blog/my-site/target/site.bin ./target/
           docker rm -v $id
         '''
       }
