@@ -50,7 +50,8 @@ val exec = file("./my-site/target/blog.tar.gz")
 val haskell by configurations.creating
 val artifact = artifacts.add("haskell", exec) {
   type = "tarball"
-  builtBy("zipper")
+  // Don't add this. erh. Needs to be provided externally in Jenkins
+  //builtBy("zipper")
   classifier = "prod"
   name = "blog"
   extension = "tar.gz"
