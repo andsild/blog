@@ -9,11 +9,12 @@ pipeline {
 
     stage('Upload image') {
       steps {
-        sh '''mkdir ./target;
-        id=$(docker create qwdeblog:latest)
+        sh '''
+          mkdir ./target; || true
+          id=$(docker create qwdeblog:latest)
           docker cp $id:/my-site/blog/target/site.bin ./target/
           docker rm -v $id
-          '''
+        '''
       }
     }
     stage('Publish') {
