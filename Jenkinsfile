@@ -2,13 +2,13 @@ pipeline {
   agent { 
     dockerfile {
       filename 'Dockerfile'
-      args '-v /data/.gradle/gradle.properties:/root/.gradle/gradle.properties -v /run/secrets/deploy-password:/var/deploy-password'
+      args '-v /data/.gradle/gradle.properties:/data/.gradle/gradle.properties -v /run/secrets/deploy-password:/var/deploy-password'
     }
   }
   stages {
     stage('Publish') {
       steps {
-          sh 'cd /blog/ && ls -lAr && export GRADLE_USER_HOME=/root/.gradle/ && export JAVA_HOME= && java --version && ./gradlew publish --info'
+          sh 'cd /blog/ && whoami && ls -lAr && export GRADLE_USER_HOME=/data/.gradle/ && export JAVA_HOME= && java --version && ./gradlew publish --info'
           sh '''
             cd /blog/my-site/
             set +x # don't expose password
