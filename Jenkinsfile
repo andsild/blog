@@ -14,7 +14,7 @@ pipeline {
           id=$(docker create qwdeblog:latest)
           docker cp $id:/blog/my-site/target/blog.tar.gz ./target/
           docker rm -v $id
-          ./gradlew publish --info --dependecy-verification=off
+          ./gradlew publish --info --dependency-verification=off
         '''
       }
     }
