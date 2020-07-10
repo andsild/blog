@@ -14,11 +14,11 @@ COPY ./build.gradle.kts /blog/
 COPY ./settings.gradle.kts /blog/
 COPY ./gradle/ /blog/gradle/
 COPY ./gradlew /blog/
-WORKDIR /blog/my-site
-RUN cabal build
+WORKDIR /blog
+RUN GRADLE_USER_HOME=".gradle" ./gradlew -q installer
 
 FROM build as runner
 COPY docker-entrypoint.sh /usr/local/bin
 # Hakyll's default port is 127.0.0.1, but for exposure through docker we need 0.0.0.0
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["cabal", "run", "my-site", "watch", "--", "--host", "0.0.0.0"]
+CMD ["./my-site/target/site.bin" "my-site", "watch", "--", "--host", "0.0.0.0"]
