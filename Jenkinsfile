@@ -10,10 +10,11 @@ pipeline {
     stage('Upload image') {
       steps {
         sh '''
-          mkdir ./target || true
+          mkdir ./my-site/target || true
           id=$(docker create qwdeblog:latest)
-          docker cp $id:/blog/my-site/target/site.bin ./target/
+          docker cp $id:/blog/my-site/target/blog.tar.gz ./target/
           docker rm -v $id
+          ./gradlew publish --info --dependecy-verification=off
         '''
       }
     }
