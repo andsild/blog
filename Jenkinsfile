@@ -10,7 +10,7 @@ pipeline {
     stage('Upload image') {
       steps {
         sh '''
-          mkdir ./target; || true
+          mkdir ./target || true
           id=$(docker create qwdeblog:latest)
           docker cp $id:/my-site/blog/target/site.bin ./target/
           docker rm -v $id
