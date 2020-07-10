@@ -59,8 +59,8 @@ val artifact = artifacts.add("haskell", exec) {
   name = "blog"
   extension = "tar.gz"
 }
-val repoUser: String by project
-val repoPassword: String by project
+val repoUser: String? by project
+val repoPassword: String? by project
 
 publishing {
   publications {
