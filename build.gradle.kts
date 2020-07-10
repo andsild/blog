@@ -32,7 +32,6 @@ task<Exec>("installer") {
 }
 
 task<Tar>("zipper") {
-  dependsOn("installer")
   compression = Compression.GZIP
   from("./my-site") {
     include(setOf("*.html", "*.markdown", "css/*", "images/*", "posts/*", "templates/*", "target/site.bin"))

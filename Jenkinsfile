@@ -12,9 +12,9 @@ pipeline {
         sh '''
           mkdir ./my-site/target || true
           id=$(docker create qwdeblog:latest)
-          docker cp $id:/blog/my-site/target/blog.tar.gz ./target/
+          docker cp $id:/blog/my-site/target/blog.tar.gz ./my-site/target/
           docker rm -v $id
-          ./gradlew publish --info --dependency-verification=off
+          ./gradlew publish --info
         '''
       }
     }
