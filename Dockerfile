@@ -12,7 +12,7 @@ RUN cabal update && cabal new-install hakyll
 COPY my-site /blog/my-site/
 COPY ./build.gradle.kts /blog/
 COPY ./settings.gradle.kts /blog/
-COPY ./gradle/ /blog/
+COPY ./gradle/ /blog/gradle/
 COPY ./gradlew /blog/
 WORKDIR /blog/my-site
 RUN cabal build
