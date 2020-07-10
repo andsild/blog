@@ -10,4 +10,4 @@ From googling around I wish I would be able to say something about the white pep
 
 A fun fact to know: Corrywreckan is a strait in Scotland, known for its whirlpool, which is the third largest in the world (according to wikipedia). There is also some mythology related to the place, featuring e.g. no less than a _hag goddess_. Google away :)
 
-As if the flavors wasn't enough, this whisky packs 57.1% alcohol punch. Drink responsibly :)
+This whisky packs 57.1% alcohol punch. Drink responsibly, and consider warning your friends before they have a sip :)
