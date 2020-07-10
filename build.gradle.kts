@@ -43,8 +43,11 @@ task<Tar>("zipper") {
       }
   }
   into("blog")
-  setArchiveName("blog.tar.gz")
-  setDestinationDir(File("./my-site/target/"))
+  archiveName = "blog.tar.gz"
+  destinationDir = File("./my-site/target/")
+  //setArchiveBaseName("blog")
+  //setArchiveExtension(".tar.gz")
+  //setDestinationDirectory(File("./my-site/target/"))
 }
 
 val exec = file("./my-site/target/blog.tar.gz")

@@ -2,7 +2,7 @@ pipeline {
   agent { 
     dockerfile {
       filename 'Dockerfile'
-      args '-v /data/.gradle/gradle.properties:/root/.gradle/gradle.properties -v /run/secrets/deploy-password:/var/deploy-password -v $JAVA_HOME:$JAVA_HOME'
+      args '-v /data/.gradle/gradle.properties:/root/.gradle/gradle.properties -v /run/secrets/deploy-password:/var/deploy-password'
     }
   }
   stages {
