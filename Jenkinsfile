@@ -1,16 +1,16 @@
 pipeline {
-  agent { 
-    dockerfile {
-      filename 'Dockerfile'
-      args '-v /data/.gradle/gradle.properties:/blog/.gradle/gradle.properties -v /run/secrets/deploy-password:/var/deploy-password -u : '
-    }
-  }
+  agent any; 
   stages {
+    stage('Build') {
+      steps {
+        sh 'docker build -t qwdeblog:latest .'
+      }
+    }
+
     stage('Publish') {
       steps {
-          sh 'cd /blog/ && ls -lAr && export GRADLE_USER_HOME=/blog/.gradle/ && export JAVA_HOME= && java --version && ./gradlew publish --info'
+          sh 'mkdir ./target && docker cp qwdeblog:latest:/my-site/blog/target/site.bin ./target/'
           sh '''
-            cd /blog/my-site/
             set +x # don't expose password
             token="$(cat /run/var/deploy-password)"
             echo "Doing curl http://qwde.no:9000/hooks/qwde-deploy?token=..."
