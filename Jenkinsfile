@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Publish') {
       steps {
-          sh 'cd /blog/ && export JAVA_HOME= && ./gradlew publish --info'
+          sh 'cd /blog/ && ls -lAr && export JAVA_HOME= && java --version && ./gradlew publish --info'
           sh '''
             cd /blog/my-site/
             set +x # don't expose password
