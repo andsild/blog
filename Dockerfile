@@ -15,7 +15,7 @@ COPY ./settings.gradle.kts /blog/
 COPY ./gradle/ /blog/gradle/
 COPY ./gradlew /blog/
 WORKDIR /blog
-RUN GRADLE_USER_HOME="/blog/.gradle/" ./gradlew -q installer --info
+RUN GRADLE_USER_HOME="/blog/.gradle/" ./gradlew --rerun-tasks -q installer --info
 
 FROM build as runner
 COPY docker-entrypoint.sh /usr/local/bin
