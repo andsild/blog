@@ -1,8 +1,8 @@
 ---
 title: Thoughts on logarithms
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-There's always been some simple formulas handy that show $log_b(x) = y$ is the same as $b^y = x$, from which I've survived the majority of school. Eventually logarithms pretty much just became a tool to use in making graphs show the first, smaller ranges of numbers at a higher resolution.
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+There's always been some simple formulas handy that show $log_b(x) = y$ is the same as $b^y = x$, from which I've survived the majority of school. I was a little late to mature enough to appreciate understanding it.
 
 I've recently picked up some math and decided to have a closer look at logarithms. First: demystifying them.
 Logarithms were inventet by a scotsman named Napier. He combined the greek words logos, meaning ratio, and arithmos, meaning numbers. Logarithms is, simply put, related to finding ratios of exponential growth in numbers. Supposedly, this is actually something humans are pretty good at. Experiments on people living outside of educated societies shows we don't differente between smaller numbers, such as the difference between 7 and 8 or 99 and 112. Humans can, however, always recognize bigger differences such as numbers between 2, 4, 8 or 10, 100, 1000... you get the drill.
