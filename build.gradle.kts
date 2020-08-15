@@ -69,7 +69,7 @@ publishing {
       pom {
         name.set("blog")
         description.set("Haskell binary to run blog")
-        url.set("http://qwde.no/blog")
+        url.set("https://qwde.no/blog")
         developers {
           developer {
             id.set("andsild")
@@ -82,7 +82,7 @@ publishing {
   }
   repositories {
     maven {
-      url = uri("http://qwde.no:8876/repository/internal/")
+      url = uri("https://qwde.no/archiva/repository/internal/")
       credentials {
           // Store in ~/.gradle/gradle.properties
           username = "admin"
