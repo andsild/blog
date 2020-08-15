@@ -5,9 +5,13 @@ title: Programming
 A gif can express a thousand words, but sometimes, a clever quote or principle can be enough.
 
 # Principles
-Chesterton's fence.
+Chesterton's fence: if you meet a fence and you don't see why it's needed, don't remove it. There probably was a good reason :)
 
-TODO: rocket desing law
+Akins' 36th law: Any run-of-the-mill engineer can design something which is elegant. A good engineer designs systems to be efficient. A great engineer designs them to be effective.
+
+Akin's 5th law (citing Miller): Three points determine a curve. 
+
+<a href="https://spacecraft.ssl.umd.edu/akins_laws.html">Check out the rest of Akin's laws of spacecraft design here</a>
 
 # Quotes I've caught in the wild
 It's okay to swear in the code, since it lets other developers know where the difficult parts are.
