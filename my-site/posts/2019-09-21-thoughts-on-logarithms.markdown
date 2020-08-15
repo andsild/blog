@@ -1,5 +1,5 @@
 ---
-title: Thoughts on logarithms
+title: Thoughts on Logarithms
 ---
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 There's always been some simple formulas handy that show $log_b(x) = y$ is the same as $b^y = x$, from which I've survived the majority of school. I was a little late to mature enough to appreciate understanding it.
