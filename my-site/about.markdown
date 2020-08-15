@@ -9,4 +9,4 @@ Qwde is a name that comes from mashing the keyboard. Maybe it will find its way 
 Several posts in the blog are inspired by topics I've heard at <a href="https://www.intelligencesquaredus.org/">IQ2US</a>. I recommend their podcasts, youtube videos and endeavour to improve civil conduct in debates.
 
 The source code for the blog is hosted on [https://github.com/andsild/blog](https://github.com/andsild/blog).
-The source code for the rest of qwde.no is hosted on [https://github.com/kwrl/qwde/](https://github.com/kwrl/qwde/)
+The source code for the rest of qwde.no is hosted on [https://github.com/andsild/qwde/](https://github.com/andsild/qwde/)
