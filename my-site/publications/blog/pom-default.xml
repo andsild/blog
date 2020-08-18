@@ -8,7 +8,7 @@
   <packaging>pom</packaging>
   <name>blog</name>
   <description>Haskell binary to run blog</description>
-  <url>http://qwde.no/blog</url>
+  <url>https://qwde.no/blog</url>
   <developers>
     <developer>
       <id>andsild</id>

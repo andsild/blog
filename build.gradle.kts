@@ -16,7 +16,7 @@ task<Exec>("builder") {
   inputs.files(listOf(fileTree("*.hs"), fileTree("*.cabal")))
     .withPropertyName("sourceFiles")
     .withPathSensitivity(PathSensitivity.RELATIVE)
-  outputs.dir("./my-site/dist-newstyle/build/")
+  outputs.dir("./my-site/target/")
 }
 
 task<Exec>("installer") {
@@ -24,11 +24,11 @@ task<Exec>("installer") {
   outputs.cacheIf { true }
   description = "install stuff"
   workingDir = File("my-site")
-  commandLine("cabal", "install", "--program-suffix=.bin", ".", "--installdir=target", "--overwrite-policy=always")
+  commandLine("stack", "install", "--local-bin-path=./target")
   inputs.files(listOf(fileTree("./my-site/image/*"), fileTree("./my-site/*.markdown"), fileTree("my-site/**/.markdown")))
     .withPropertyName("sourceFiles")
     .withPathSensitivity(PathSensitivity.RELATIVE)
-  outputs.dir("./my-site/dist-newstyle/target")
+  outputs.dir("./my-site/target")
 }
 
 task<Tar>("zipper") {
@@ -36,7 +36,7 @@ task<Tar>("zipper") {
   from("./my-site") {
     include(setOf("*.html", "*.markdown", "css/*", "images/*", "posts/*", "templates/*", "target/site.bin"))
 
-    filesMatching("target/site.bin") {
+    filesMatching("target/site") {
       path = "blog/"
       name = "blog/site.bin"
       }

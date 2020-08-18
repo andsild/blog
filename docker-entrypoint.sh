@@ -12,7 +12,8 @@ fi
 
 # check for the expected command...kind of
 if [ "$1" = 'watch' ]; then
-    exec gosu cabal run my-site watch -- "$@"
+    exec gosu stack exec site clean -- "$@"
+    exec gosu stack exec site watch -- "$@"
 fi
 
 # else default to run whatever the user wanted like "bash" or "sh"

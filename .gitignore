@@ -1,3 +1,4 @@
+*.lock
 !/.mvn/wrapper/maven-wrapper.jar
 !gradle-wrapper.jar
 *.aux
