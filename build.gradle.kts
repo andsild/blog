@@ -7,51 +7,10 @@ description = """
   bloooooog
 """
 
-task<Exec>("builder") {
-  description = "build blog"
-  buildDir = File("./my-site/")
-  workingDir = File("my-site")
-  outputs.cacheIf { true }
-  commandLine("cabal", "build")
-  inputs.files(listOf(fileTree("*.hs"), fileTree("*.cabal")))
-    .withPropertyName("sourceFiles")
-    .withPathSensitivity(PathSensitivity.RELATIVE)
-  outputs.dir("./my-site/target/")
-}
-
-task<Exec>("installer") {
-  dependsOn("builder")
-  outputs.cacheIf { true }
-  description = "install stuff"
-  workingDir = File("my-site")
-  commandLine("stack", "install", "--local-bin-path=./target")
-  inputs.files(listOf(fileTree("./my-site/image/*"), fileTree("./my-site/*.markdown"), fileTree("my-site/**/.markdown")))
-    .withPropertyName("sourceFiles")
-    .withPathSensitivity(PathSensitivity.RELATIVE)
-  outputs.dir("./my-site/target")
-}
-
-task<Exec>("zipper") {
-  compression = Compression.GZIP
-  from("./my-site") {
-    include(setOf("*.html", "*.markdown", "css/*", "images/*", "posts/*", "templates/*", "target/site.bin"))
-
-    filesMatching("target/site") {
-      path = "blog/"
-      name = "blog/site.bin"
-      }
-  }
-  into("blog")
-  destinationDir = File("./my-site/target/")
-  getArchiveFileName().set("blog.tar.gz")
-}
-
 val exec = file("./my-site/target/blog.tar.gz")
 val haskell by configurations.creating
 val artifact = artifacts.add("haskell", exec) {
   type = "tarball"
-  // Don't add this. erh. Needs to be provided externally in Jenkins
-  //builtBy("zipper")
   classifier = "prod"
   name = "blog"
   extension = "tar.gz"
