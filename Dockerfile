@@ -5,8 +5,8 @@ COPY ./settings.gradle.kts /blog/
 COPY ./gradle/ /blog/gradle/
 COPY ./gradlew /blog/
 WORKDIR /blog/my-site/
-RUN stack setup ; stack install hakyll ; stack init
-RUN stack install --local-bin-path=target && mv -v ./target/site ./target/site.bin
+RUN stack setup && stack install hakyll && stack init
+RUN stack init && stack install --local-bin-path=target && mv -v ./target/site ./target/site.bin
 RUN cd target && find .. -name \*.html -or -name \*.markdown -or -regex .\*/css/.\* -or -regex .\*/images/.\* -or -regex .\*/posts/.\* -or -regex .\*/templates/.\* -or -regex .\*target/site.bin | tar -zcvf blog.tar.gz -T -
 
 FROM build as runner
