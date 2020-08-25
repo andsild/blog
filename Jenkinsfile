@@ -2,10 +2,15 @@ pipeline {
   agent any; 
   stages {
     stage('Build') {
+      when {
+        changeset "my-site/**\.(hs|cabal|nix|yaml)"
+        comparator: "REGEXP"
+      }
       steps {
         sh 'docker build -t qwdeblog:latest .'
       }
     }
+
 
     stage('Upload image') {
       steps {
@@ -14,6 +19,10 @@ pipeline {
           id=$(docker create qwdeblog:latest)
           docker cp $id:/blog/my-site/target/blog.tar.gz ./my-site/target/
           docker rm -v $id
+          cd target 
+          find .. -name \*.html -or -name \*.markdown -or -regex .\*/css/.\* -or -regex .\*/images/.\* -or -regex .\*/posts/.\* -or -regex .\*/templates/.\* -or -regex .\*target/site.bin | tar -zcvf blog.tar.gz -T -
+          cd ..
+
           ./gradlew publish --info
         '''
       }
