@@ -20,7 +20,7 @@ pipeline {
 
     stage('Upload image') {
       when { 
-        changeset pattern: ".*\\.(html|html|css|md")|.*/(templates|posts|images)/.*", comparator: "REGEXP" 
+        changeset pattern: ".*\\.(html|html|css|md)|.*/(templates|posts|images)/.*", comparator: "REGEXP" 
       }
       steps {
         sh '''
