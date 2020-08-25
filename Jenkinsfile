@@ -1,32 +1,37 @@
 pipeline {
   agent any; 
   stages {
-    stage('Build') {
+    stage('Build/upload haskell') {
       when { 
-        changeset pattern: ".*\\.(hs|cabal|nix|yaml)", comparator: "REGEXP" 
+        changeset pattern: "Dockerfile|.*\\.(hs|cabal|nix|yaml|kts)", comparator: "REGEXP" 
       }
       steps {
-        sh 'docker build -t qwdeblog:latest .'
+        sh '''
+          mkdir ./my-site/target || true
+          docker build -t qwdeblog:latest .
+          id=$(docker create qwdeblog:latest)
+          docker cp $id:/blog/my-site/target/blog.tar.gz ./my-site/target/
+          docker rm -v $id
+          ./gradlew publish --info -x publishBlogPublicationToMavenRepository
+        '''
       }
     }
 
 
     stage('Upload image') {
+      when { 
+        changeset pattern: ".*\\.(html|html|css|md")|.*/(templates|posts|images)/.*", comparator: "REGEXP" 
+      }
       steps {
         sh '''
-          mkdir ./my-site/target || true
-          id=$(docker create qwdeblog:latest)
-          docker cp $id:/blog/my-site/target/blog.tar.gz ./my-site/target/
-          docker rm -v $id
           cd target 
-          find .. -name \\*.html -or -name \\*.markdown -or -regex .\\*/css/.\\* -or -regex .\\*/images/.\\* -or -regex .\\*/posts/.\\* -or -regex .\\*/templates/.\\* -or -regex .\\*target/site.bin | tar -zcvf blog.tar.gz -T -
+          find .. -name \\*.html -or -name \\*.markdown -or -regex .\\*/css/.\\* -or -regex .\\*/images/.\\* -or -regex .\\*/posts/.\\* -or -regex .\\*/templates/.\\* | tar -zcvf blog.tar.gz -T -
           cd ..
-
-          ./gradlew publish --info
+          ./gradlew publish --info -x publishExecutablePublicationToMavenRepository
         '''
       }
     }
-    stage('Publish') {
+    stage('Deploy') {
       steps {
         sh '''
           set +x # don't expose password
