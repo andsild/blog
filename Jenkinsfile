@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       when { 
-        changeset pattern "my-site/**\\.(hs|cabal|nix|yaml)"
+        changeset "my-site/**\\.(hs|cabal|nix|yaml)"
         comparator: "REGEXP" 
       }
       steps {
@@ -20,7 +20,7 @@ pipeline {
           docker cp $id:/blog/my-site/target/blog.tar.gz ./my-site/target/
           docker rm -v $id
           cd target 
-          find .. -name \*.html -or -name \*.markdown -or -regex .\*/css/.\* -or -regex .\*/images/.\* -or -regex .\*/posts/.\* -or -regex .\*/templates/.\* -or -regex .\*target/site.bin | tar -zcvf blog.tar.gz -T -
+          find .. -name \\*.html -or -name \\*.markdown -or -regex .\\*/css/.\\* -or -regex .\\*/images/.\\* -or -regex .\\*/posts/.\\* -or -regex .\\*/templates/.\\* -or -regex .\\*target/site.bin | tar -zcvf blog.tar.gz -T -
           cd ..
 
           ./gradlew publish --info
