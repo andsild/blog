@@ -2,7 +2,10 @@ pipeline {
   agent any; 
   stages {
     stage('Build') {
-      when { changeset pattern "my-site/**\\.(hs|cabal|nix|yaml)", comparator: "REGEXP" }
+      when { 
+        changeset pattern "my-site/**\\.(hs|cabal|nix|yaml)"
+        comparator: "REGEXP" 
+      }
       steps {
         sh 'docker build -t qwdeblog:latest .'
       }
