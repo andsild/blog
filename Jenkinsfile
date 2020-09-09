@@ -24,6 +24,8 @@ pipeline {
       }
       steps {
         sh '''
+          rm -rv target || true
+          mkdir -p target || true
           cd target 
           find .. -name \\*.html -or -name \\*.markdown -or -regex .\\*/css/.\\* -or -regex .\\*/images/.\\* -or -regex .\\*/posts/.\\* -or -regex .\\*/templates/.\\* | tar -zcvf blog.tar.gz -T -
           cd ..
