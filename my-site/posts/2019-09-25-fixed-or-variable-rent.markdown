@@ -1,5 +1,5 @@
 ---
-title: Fixed or variable rates in bank loans?
+title: Fixed or Variable Rates in Bank Loans?
 ---
 
 Norway recently announced their upping the official bank rate to 1.5%. This will in most cases also affect rates on loans given to those interested in e.g. buying a house.
