@@ -25,6 +25,7 @@ pipeline {
       }
       steps {
         sh '''
+          cd my-site/
           rm -rv target || true
           mkdir -p target || true
           cd target 

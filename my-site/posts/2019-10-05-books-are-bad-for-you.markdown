@@ -1,5 +1,5 @@
 ---
-  title: Books are bad for you!
+  title: Books are Bad for You!
 ---
 
 When Johannes Gutenberg invented the printing press, people were sceptical. Wouldn't books cause an overload of information, make it easier to spread propaganda and ... ruin society?
