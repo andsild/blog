@@ -2,7 +2,7 @@
 title: How to Solve it by Polya, Applied for Debugging
 ---
 
-There have been many times when I debug or work with code that I get lost in Alice's Wonderland. After reading "How to Solve it" by Polya, written 1945, my approaches are getting better.
+Sometimes when I debug code I get lost in Alice's Wonderland. I found "How to Solve it" by Polya, written 1945, to be a long-overdue must-read.
 Polya, FYI, was an accomplished professor in mathematics both at ETH Zürich and Stanford.
 The jist of the book is four principles, which he drills into you with many examples from simple elementary-school level geometry and crossword puzzles. The principles are:
   * First, you have to understand the problem.
