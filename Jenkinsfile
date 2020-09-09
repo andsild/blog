@@ -7,6 +7,7 @@ pipeline {
       }
       steps {
         sh '''
+          rm -rv ./my-site/target || true
           mkdir ./my-site/target || true
           docker build -t qwdeblog:latest .
           id=$(docker create qwdeblog:latest)
@@ -24,8 +25,9 @@ pipeline {
       }
       steps {
         sh '''
+          cd my-site/
           rm -rv target || true
-          mkdir -p target || true
+          mkdir -p my-site/target || true
           cd target 
           find .. -name \\*.html -or -name \\*.markdown -or -regex .\\*/css/.\\* -or -regex .\\*/images/.\\* -or -regex .\\*/posts/.\\* -or -regex .\\*/templates/.\\* | tar -zcvf blog.tar.gz -T -
           cd ..
