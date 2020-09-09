@@ -34,7 +34,7 @@ publishing {
       artifactId = "blog"
       pom {
         name.set("blog")
-        description.set("Haskell binary to run blog")
+        description.set("Blog posts, HTML, etc")
         url.set("https://qwde.no/blog")
         developers {
           developer {
