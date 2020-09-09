@@ -19,6 +19,8 @@ The jist of the book is four principles, which he drills into you with many exam
 <br />
 <br />
 <br />
+<br />
+
 
 The principles are:
 <ul>
