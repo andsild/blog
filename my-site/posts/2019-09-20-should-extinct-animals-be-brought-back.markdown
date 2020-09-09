@@ -1,5 +1,5 @@
 ---
-title: Bringing back extinct animals
+title: Bringing Back Extinct Animals
 ---
 Scientists want to revive extinct animals by breeding their DNA. Human beings can control more of the environment by choosing animals with "right" properties to solve our problems.
 Mammoths are now for example being considered since they are able to reduce carbon emissions from arctic tundra landscapes.
