@@ -9,10 +9,12 @@ title: How to Solve it by Polya, Applied for Debugging
 Sometimes when I debug code I get lost in Alice's Wonderland. I found "How to Solve it" by Polya, written 1945, to be a long-overdue must-read.
 Polya, FYI, was an accomplished professor in mathematics both at ETH Zürich and Stanford.
 The jist of the book is four principles, which he drills into you with many examples from simple elementary-school level geometry and crossword puzzles. The principles are:
-  * First, you have to understand the problem.
-  * After understanding, make a plan.
-  * Carry out the plan.
-  * Look back on your work
+<ul>
+  <li>  First, you have to understand the problem. </li>
+  <li>  After understanding, make a plan. </li>
+  <li> Carry out the plan. </li>
+  <li> Look back on your work </li>
+</ul>
 
 Primarily, Polya is interested in mathematics, but I find that his approaces are general enough that I can make use of them in debugging code / solving coding problems. Here's how I map the principles:
 
