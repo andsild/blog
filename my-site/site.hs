@@ -4,8 +4,6 @@ import           Data.Monoid (mappend)
 import           Hakyll
 import GHC.IO.Encoding
 
-
---------------------------------------------------------------------------------
 main :: IO ()
 main = do
   setLocaleEncoding utf8
@@ -63,8 +61,6 @@ main = do
 
     match "templates/*" $ compile templateBodyCompiler
 
-
---------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
