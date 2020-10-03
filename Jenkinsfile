@@ -11,7 +11,7 @@ pipeline {
           mkdir ./my-site/target || true
           docker build -t qwdeblog:latest .
           id=$(docker create qwdeblog:latest)
-          docker cp $id:/blog/my-site/target/blog.tar.gz ./my-site/target/
+          docker cp $id:/blog/my-site/target/site.bin ./my-site/target/
           docker rm -v $id
           ./gradlew publish --info -x publishBlogPublicationToMavenRepository
         '''
