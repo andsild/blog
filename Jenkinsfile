@@ -40,8 +40,13 @@ pipeline {
         sh '''
           set +x # don't expose password
           token="$(cat /run/secrets/deploy-password)"
-          echo "Doing curl https://qwde.no:9000/hooks/qwde-deploy-simple?service=blog-download&token=..."
-          curl "https://qwde.no:9000/hooks/qwde-deploy-simple?token=$token&service=blog-download"
+
+# TODO
+          echo "Doing curl https://qwde.no:9000/hooks/qwde-deploy?service=blogposts&token=..."
+          curl "https://qwde.no:9000/hooks/qwde-deploy-simple?token=$token&service=blogposts&artifact=blog&classifier=prod&extension=tar.gz"
+
+          echo "Doing curl https://qwde.no:9000/hooks/qwde-deploy?service=blog&token=..."
+          curl "https://qwde.no:9000/hooks/qwde-deploy-simple?token=$token&service=blog&&artifact=site&classifier=prod&extension=bin"
           set -x
           '''
       }
