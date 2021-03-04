@@ -1,12 +1,13 @@
 FROM haskell:8 as build
+COPY my-site/stack.yaml my-site/my-site.cabal /blog/my-site/
+WORKDIR /blog/my-site/
+RUN stack setup && stack install hakyll
 COPY my-site /blog/my-site/
 COPY ./build.gradle.kts /blog/
 COPY ./settings.gradle.kts /blog/
 COPY ./gradle/ /blog/gradle/
 COPY ./gradlew /blog/
-WORKDIR /blog/my-site/
-RUN stack setup && stack install hakyll && stack init
-RUN stack init --force && stack install --local-bin-path=target && mv -v ./target/site ./target/site.bin
+RUN stack install --local-bin-path=target && mv -v ./target/site ./target/site.bin
 #RUN cd target && find .. -name \*.html -or -name \*.markdown -or -regex .\*/css/.\* -or -regex .\*/images/.\* -or -regex .\*/posts/.\* -or -regex .\*/templates/.\* -or -regex .\*target/site.bin | tar -zcvf blog.tar.gz -T -
 
 FROM build as runner
